@@ -11,7 +11,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = "https://maven.pkg.github.com/BVHardworker/bv-hard-worker-telegram-bot"
+            url = "https://maven.pkg.github.com/BVHardworker/messages"
             credentials {
                 username = System.getenv("GITHUB_ACTOR")
                 password = System.getenv("GITHUB_TOKEN")
