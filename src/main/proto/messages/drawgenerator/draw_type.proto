@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package draw.generator;
+
+option java_package = "com.bvhardworker.messages.drawgenerator";
+option java_multiple_files = true;
+
+enum DrawType {
+  SINGLE_ELIMINATION = 0;
+  DOUBLE_ELIMINATION = 1;
+  GROUPS = 3;
+}

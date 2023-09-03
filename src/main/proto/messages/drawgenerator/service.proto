@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package draw.generator;
+
+option java_package = "com.bvhardworker.messages.drawgenerator";
+
+import "messages/drawgenerator/request.proto";
+import "messages/drawgenerator/response.proto";
+
+service DrawGeneratorService {
+
+  rpc generate(GenerateDrawRequest) returns(GenerateDrawResponse);
+}

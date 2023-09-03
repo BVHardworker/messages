@@ -1,0 +1,65 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+    id 'com.google.protobuf' version "$protobufPluginVersion"
+}
+
+group = 'com.bvhardworker.telegram.bot'
+version = "$projectVersion"
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = "https://maven.pkg.github.com/BVHardworker/bv-hard-worker-telegram-bot"
+            credentials {
+                username = System.getenv("GITHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
+    }
+    publications {
+        gpr(MavenPublication) {
+            from(components.java)
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "com.google.protobuf:protobuf-javalite:$protobufVersion"
+    runtimeOnly "io.grpc:grpc-netty-shaded:$grpcVersion"
+    implementation "io.grpc:grpc-protobuf:$grpcVersion"
+    implementation "io.grpc:grpc-stub:$grpcVersion"
+    implementation "javax.annotation:javax.annotation-api:$javaxAnnotationApiVersion"
+}
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:$protocVersion"
+    }
+
+    plugins {
+        grpc {
+            artifact = "io.grpc:protoc-gen-grpc-java:$protocGrpcGeneratorVersion"
+        }
+    }
+
+    generateProtoTasks {
+        all()*.plugins {
+            grpc {}
+        }
+    }
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs 'build/generated/source/proto/main/grpc'
+            srcDirs 'build/generated/source/proto/main/java'
+        }
+    }
+}
