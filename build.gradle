@@ -33,7 +33,7 @@ dependencies {
     implementation "com.google.protobuf:protobuf-javalite:$protobufVersion"
     implementation "io.grpc:grpc-netty-shaded:$grpcVersion"
     implementation "io.grpc:grpc-protobuf:$grpcVersion"
-    api "io.grpc:grpc-stub:$grpcVersion"
+    implementation "io.grpc:grpc-stub:$grpcVersion"
     implementation "javax.annotation:javax.annotation-api:$javaxAnnotationApiVersion"
 }
 
