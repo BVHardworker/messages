@@ -31,7 +31,7 @@ repositories {
 
 dependencies {
     implementation "com.google.protobuf:protobuf-javalite:$protobufVersion"
-    implementation "io.grpc:grpc-netty-shaded:$grpcVersion"
+    runtimeOnly "io.grpc:grpc-netty-shaded:$grpcVersion"
     implementation "io.grpc:grpc-protobuf:$grpcVersion"
     implementation "io.grpc:grpc-stub:$grpcVersion"
     implementation "javax.annotation:javax.annotation-api:$javaxAnnotationApiVersion"
