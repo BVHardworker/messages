@@ -6,4 +6,5 @@ option java_package = "com.bvhardworker.messages.drawgenerator";
 
 message GenerateDrawResponse {
   bool success = 1;
+  string message = 2;
 }
