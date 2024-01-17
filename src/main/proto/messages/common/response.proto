@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package common;
+
+option java_package = "com.bvhardworker.messages.common";
+option java_multiple_files = true;
+
+message Response {
+  bool success = 1;
+  string message = 2;
+}
