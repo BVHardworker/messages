@@ -7,7 +7,8 @@ option java_package = "com.bvhardworker.messages.drawgenerator";
 import "messages/drawgenerator/draw_type.proto";
 
 message GenerateDrawRequest {
-  DrawType drawType = 1;
-  repeated string participants = 2;
-  optional int32 groupsCount = 3;
+  int64 tournamentId = 1;
+  DrawType drawType = 2;
+  repeated string participants = 3;
+  optional int32 groupsCount = 4;
 }

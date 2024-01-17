@@ -4,7 +4,16 @@ package draw.generator;
 
 option java_package = "com.bvhardworker.messages.drawgenerator";
 
-message GenerateDrawResponse {
+message Response {
   bool success = 1;
   string message = 2;
+}
+
+message GenerateDrawResponse {
+  Response response = 1;
+}
+
+message CreateTournamentResponse {
+  Response response = 1;
+  int64 tournamentId = 2;
 }
