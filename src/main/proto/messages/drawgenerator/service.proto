@@ -6,11 +6,11 @@ option java_package = "com.bvhardworker.messages.drawgenerator";
 
 import "messages/drawgenerator/request.proto";
 import "messages/drawgenerator/response.proto";
-import "google/protobuf/empty.proto";
+import "messages/common/empty.proto";
 
 service DrawGeneratorService {
 
   rpc generate(GenerateDrawRequest) returns(GenerateDrawResponse);
 
-  rpc createTournament(google.protobuf.Empty) returns(CreateTournamentResponse);
+  rpc createTournament(common.Empty) returns(CreateTournamentResponse);
 }
